@@ -127,7 +127,7 @@ void esp01_connectAP()
 	Write_str_LCD("AT+CWJAP");
 	delay_ms(1000);
 	//need to change the wifi network name and password
-	UART0_Str("AT+CWJAP=\"ESCR\",\"Charan@041120\"\r\n");
+	UART0_Str("AT+CWJAP=\"YOUR_WIFI_SSID\",\"YOUR_WIFI_PASSWORD\"\r\n");
 	i=0;memset(buff,'\0',200);
 	while(i<4);
 	delay_ms(2500);
