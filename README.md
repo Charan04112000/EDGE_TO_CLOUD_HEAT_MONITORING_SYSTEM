@@ -5,29 +5,15 @@ Welcome to the IoT Temperature and Smoke Monitoring System! 🎉 This project is
 
 This project integrates multiple hardware and software components to create a robust IoT system. Here's what it does:
 
-
-
-
-
 Measures Temperature 🌡️: Uses an ADC to read temperature sensor data.
-
-
 
 Detects Smoke 💨: Monitors a smoke sensor (MQ2) for hazardous conditions.
 
-
-
 Displays Data 📟: Shows real-time temperature and smoke status on a 16x2 LCD.
-
-
 
 Sends Data to Cloud ☁️: Transmits data to ThingSpeak via an ESP-01 Wi-Fi module for remote monitoring.
 
-
-
 Real-Time Clock (RTC) ⏰: Tracks time to schedule data uploads every 3 minutes.
-
-
 
 Buzzer Alert 🚨: Activates a buzzer if smoke is detected (though not implemented in the provided code).
 
@@ -36,50 +22,18 @@ The project is built around the LPC2148 microcontroller and uses a modular C cod
 🛠️ Hardware Requirements
 
 
-
-
-
 LPC2148 Microcontroller 🖥️: The core of the system.
-
-
-
 Temperature Sensor 🌡️: Connected to ADC channel 1.
-
-
-
 MQ2 Smoke Sensor 💨: Connected to P0.14.
-
-
-
 16x2 LCD Display 📟: For local data display.
-
-
-
 ESP-01 Wi-Fi Module 📡: For internet connectivity.
-
-
-
 Buzzer 🚨: For alerts (connected to P0.13, though not used in code).
-
-
-
 Power Supply 🔌: 3.3V for LPC2148 and sensors.
 
 📦 Software Requirements
-
-
-
-
-
-Keil uVision 🛠️: For compiling and flashing the code.
-
-
-
-ThingSpeak Account ☁️: For cloud data storage and visualization.
-
-
-
-Drivers: UART, ADC, RTC, and LCD libraries for LPC2148.
+*Keil uVision 🛠️: For compiling and flashing the code.
+*ThingSpeak Account ☁️: For cloud data storage and visualization.
+*Drivers: UART, ADC, RTC, and LCD libraries for LPC2148.
 
 🚀 Getting Started
 
@@ -88,38 +42,15 @@ Drivers: UART, ADC, RTC, and LCD libraries for LPC2148.
 git clone <your-repo-url>
 
 2. Hardware Setup
-
-
-
-
-
-Connect the temperature sensor to ADC channel 1.
-
-
-
-Connect the MQ2 smoke sensor to P0.14.
-
-
-
-Wire the 16x2 LCD to P0.16 (RS), P0.17 (RW), P0.18 (EN), and P1.16-P1.23 (data).
-
-
-
-Connect the ESP-01 module to UART0 (Tx: P0.0, Rx: P0.1).
-
-
-
-Ensure a stable 3.3V power supply for all components.
+   *Connect the temperature sensor to ADC channel 1.
+   *Connect the MQ2 smoke sensor to P0.14.
+   *Wire the 16x2 LCD to P0.16 (RS), P0.17 (RW), P0.18 (EN), and P1.16-P1.23 (data).
+   *Connect the ESP-01 module to UART0 (Tx: P0.0, Rx: P0.1).
+   *Ensure a stable 3.3V power supply for all components.
 
 3. Software Configuration
-
-
-
-
-
-Update the Wi-Fi credentials in esp01.c:
-
-   *UART0_Str("AT+CWJAP=\"YOUR_WIFI_SSID\",\"YOUR_WIFI_PASSWORD\"\r\n");
+   *Update the Wi-Fi credentials in esp01.c:
+     UART0_Str("AT+CWJAP=\"YOUR_WIFI_SSID\",\"YOUR_WIFI_PASSWORD\"\r\n");
    *Update the ThingSpeak API key in esp01.c:
    *UART0_Str("GET /update?api_key=YOUR_API_KEY&field1=");
    *Compile and flash the code using Keil uVision.
@@ -151,51 +82,17 @@ Update the Wi-Fi credentials in esp01.c:
 ├── main.c         # Main program logic
 
 🌟 Features
-
-
-
-
-
 Real-Time Monitoring ⏰: Displays temperature and smoke status on the LCD.
-
-
-
 Cloud Integration ☁️: Sends data to ThingSpeak for remote access.
-
-
-
 Modular Code 🧩: Well-organized C files for easy maintenance.
-
-
-
 Error Handling 🛡️: Displays "OK" or "ERROR" on LCD for ESP-01 commands.
-
-
-
 Low Power ⚡: Efficient use of LPC2148 resources.
 
 🔧 Improvements & Future Enhancements
-
-
-
-
-
 Buzzer Implementation 🚨: Add logic to activate the buzzer on smoke detection.
-
-
-
 Error Recovery 🔄: Implement retry mechanisms for failed Wi-Fi or ThingSpeak connections.
-
-
-
 More Sensors 📈: Add support for additional sensors (e.g., humidity, CO).
-
-
-
 User Interface 🖱️: Add buttons to manually trigger data uploads or reset.
-
-
-
 Power Optimization 💡: Use low-power modes of LPC2148 for energy efficiency.
 
 🤝 Contributing
@@ -208,18 +105,8 @@ This project is licensed under the MIT License. See the LICENSE file for details
 
 🙏 Acknowledgments
 
-
-
-
-
 LPC2148 Community for excellent documentation.
-
-
-
 ThingSpeak for providing a free IoT platform.
-
-
-
 You, for exploring this project! 🎉
 
 Happy coding! 🚀
